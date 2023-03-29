@@ -1,0 +1,51 @@
+- > cuando iniciamos las rutas se crea el controlador primero
+
+    - > Crear vista 
+        - > creamos la carpeta layouts{
+                - > dentro de ella creamos el archivo main y dento de el ira nuestra plantilla html
+                @include('shared/menu')
+                 @yield('contenido')
+        }
+    - > Creamos la carpeta shared{
+        - > creamos un archivo llamado menu 
+            - > ira nuestro nav bar
+    - >estos van en cualquier vista que quieras que lo muestren  el menu
+            @extends('layouts/main')
+
+                @section('contenido')
+
+                <h5>contenido que ira a abajo de la barra de navegacion </h5
+                @endsection
+    }
+    - > para ello tenemos que crear el controlador {
+    - > php artisan make : controller NombreDeControlador -r 
+                    - > creamos una ruta 
+                            - > Route::get('/', [NombreDelControlador::class, 'NombreDelMetodoDelControlador']);
+                                    - > get es para las vistas 
+                                    - > / es la principal 
+                                    - > /nombreVista - > asi se llama cuando tiene una vista 
+
+                                        - > PARA ROTARNAR LA VISTA TE IRAS AL ARCHIVO DE CONTROLADOR 
+                                            - >    public function NombreDelControlador(){
+
+                                                    return view('Nombre de la vista');
+                                                }
+
+    }
+        
+
+- > creas tu base de datos con mariadb por consola {
+
+    - > mysql -u UserLuisAlberto -p
+        - > Pedira tu contrasela 
+--------------------------------------------------
+    - > Luego creas tus migraciones con el comando 
+
+        - > php artisan make:migration createNombreQueGustes_table
+
+            - > vamos a la carpeta de Models 
+                - > y entramos a la carpeta de database/migrations
+                    - > vemos la ultima migracion 
+
+
+}

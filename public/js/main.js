@@ -1,0 +1,4 @@
+$(()=>{
+    $('#diseñodetable').DataTable();
+
+});
